@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSFlashAero</title>
+<link href="JSFA.CSS" type="text/css" rel="stylesheet">
+<script src="JSFA.JS" type="text/javascript"></script>
+</head>
+<body>
+	<div id="settings">
+		<div class="headline">Settings</div>
+		
+		<div id="histogram">
+			<div class="headline">Histogram</div>
+			<input id="check_bright" type="checkbox">Brightness</input>
+			<input id="check_red" type="checkbox">Red</input>
+			<input id="check_green" type="checkbox">Green</input>
+			<input id="check_blue" type="checkbox">Blue</input>
+			
+			<div class="squaredThree">
+	<input type="checkbox" value="None" id="squaredThree" name="check" /> <label for="squaredThree"></label>
+			</div>
+			
+		</div>
+		
+		<div id="folder">
+			<input id="directory_storage" type="hidden" value="/" >
+			<ol>
+				<li>
+					<div class='dir_content_div' id="dir_id_root">
+						<button class="dir_button" type="button" onclick="expandDirectory('root')">+</button>
+						<span class="dir_path">/</span>
+						<input checked="checked" class="dir_radio" type="radio" name="directory" value="">
+					</div>
+				</li>
+			</ol>
+		</div>
+
+	</div>
+	<div id="content">
+		
+	</div>
+	
+		<a href="#" onclick="splitDirectoryContent('/')">splittest</a>
+	<a href="#" onclick="fullscreen(document.getElementById('content'))">Start Display</a>
+</body>
+</html>

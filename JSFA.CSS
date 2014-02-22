@@ -1,0 +1,52 @@
+body
+{
+	background-color: grey;
+	
+}
+
+#settings
+{
+	width: 30%;
+	height: 100%;
+    background-color: rgb(85, 85, 85);	
+}
+
+#settings .headline
+{
+	
+}
+
+
+
+#content
+{
+	color:red;
+	background-color: white;
+	
+}
+
+li 
+{
+	list-style-type: none;	
+}
+
+.folderClosePicture
+{
+	float:left;
+	background-image: url("COLLAPSE.SVG");
+	background-repeat: none;
+	background-size: 100% 100%;
+	width: 15px;
+	height: 15px;
+}
+
+#folder
+{
+	overflow: auto;
+}
+
+.dir_content_div
+{
+	float: left;
+	white-space: nowrap;
+}
