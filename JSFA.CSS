@@ -1,15 +1,34 @@
 body
-{
+{	
+	position: absolute;
+	top: 0;
+	left: 0;
 	background-color: grey;
-	
+	height:100%;
+	width:100%;
+	margin: 0;
+	}
+
+#control
+{
+	position: fixed;
+	top: 0;
+	left:0;
+	margin-left: auto;
+	margin-right:auto;
+	float: right;
+	z-index:10;
+	width: 30%;
+	height: 100%;
+    background-color: rgb(85, 85, 85);
+    opacity: 0.9;
 }
 
 #settings
 {
-	width: 30%;
-	height: 100%;
-    background-color: rgb(85, 85, 85);	
+	
 }
+
 
 #settings .headline
 {
@@ -21,7 +40,7 @@ body
 #content
 {
 	color:red;
-	background-color: white;
+	background-color: black;
 	
 }
 
@@ -47,6 +66,37 @@ li
 
 .dir_content_div
 {
+	align: center;
+	valign: middle;
 	float: left;
 	white-space: nowrap;
 }
+
+#content
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	max-height:100%;
+	max-width:100%;
+	height:100%;
+	width:100%;
+	margin:0;
+}
+
+#divImg
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	max-height:100%;
+	max-width:100%;
+	height:100%;
+	width:100%;
+	margin:0;
+	background-image: url("test.jpg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+

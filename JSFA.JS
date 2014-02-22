@@ -90,6 +90,12 @@ function splitDirectoryContent(directory_info)
 	return dir_content;
 }
 
+/**
+ * This function queries the directory content from the server
+ * @param directory The directory string
+ * @param callback function(directory, directory_content, callback_info) which is called when directory listing was received 
+ * @param callback_info Additional information for the callback function
+ */
 function getDirectoryContent(directory, callback, callback_info)
 {
 	if(directory=='')
@@ -113,6 +119,12 @@ function getDirectoryContent(directory, callback, callback_info)
   oReq.send(null);   
 }
 
+/**
+ * This function creates the folderlist for a directory
+ * @param directory the directory string
+ * @param directory_content {Array} of fileObjects
+ * @param dir_descriptor The string of the id of the directories div container
+ */
 function createFolderListEntries(directory, directory_content, dir_descriptor)
 {
 	var element=document.getElementById('dir_id_'+ dir_descriptor);
@@ -176,6 +188,10 @@ function createFolderListEntries(directory, directory_content, dir_descriptor)
 	}
 }
 
+/**
+ * Creates the directory list for a single directory in the settings.
+ * @param dir_descriptor The id of the div container of the directory
+ */
 function expandDirectory(dir_descriptor)
 {
 	
@@ -197,6 +213,10 @@ function expandDirectory(dir_descriptor)
 	}
 }
 
+/**
+ * This collapses a directory entry in the settings
+ * @param dir_descriptor the div container of the directory entry
+ */
 function collapseDirectory(dir_descriptor)
 {
 	element=document.getElementById('dir_id_'+ dir_descriptor);
@@ -210,8 +230,15 @@ function collapseDirectory(dir_descriptor)
 
 }
 
+/**
+ * This function is called when the user selects another directory for
+ * watching it, for automatically loading the latest image
+ * @param directory The full directory path
+ */
 function directoryUpdate(directory)
 {
 	directory_field=document.getElementById('directory_storage');
 	directory_field.setAttribute('value', directory);
 }
+
+
