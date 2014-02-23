@@ -2,7 +2,7 @@
  * When set to true, this variable makes it possible to debug css for the folder selector without having 
  * connection to a card.
  */
-var debug_tree=true;
+var debug_tree=false;
 
 /**
  * Execute function settingsLoad at DOM Load
@@ -206,9 +206,11 @@ function getDirectoryContent(directory, callback, callback_info)
  */
 function createFolderListEntries(directory, directory_content, dir_descriptor)
 {
+	
+	if(directory=='/')
+		directory='';
+		
 	var element=document.getElementById('dir_id_'+ dir_descriptor);
-	//var directory=element.getElementsByClassName('dir_radio')[0].value;
-
 	
 	button=element.getElementsByClassName('dir_button')[0];
 	button.innerHTML='-';
@@ -229,7 +231,6 @@ function createFolderListEntries(directory, directory_content, dir_descriptor)
 		{			
 			var lentry=document.createElement("li");
 			list.appendChild(lentry);
-			
 			
 			var div_id=dir_descriptor + '_' + dir_obj.filename;
 			var lentry_div=document.createElement("div");
@@ -279,7 +280,7 @@ function expandDirectory(dir_descriptor)
 
 	if(debug_tree)//create Test entries
 	{
-		directory_content=[];
+		var directory_content=[];
 		for (var i = 0; i < 5; i++) 
 		{
 			directory_content.push(new fileObject(directory,'c_' + i, 1000, (1<<4), 0815, 1234));
@@ -426,6 +427,7 @@ function PictureUpdate(directory, directory_content, callback_info)
 				ending=ending.toLowerCase();
 				if(ending == 'jpg')
 				{
+					
 					if(last_date<=dir_obj.date || last_time<dir_obj.time)
 					{
 						last_date=dir_obj.date;
