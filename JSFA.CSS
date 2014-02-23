@@ -72,6 +72,11 @@ li
 	white-space: nowrap;
 }
 
+#histogram_settings
+{
+	display: none;
+}
+
 #content
 {
 	position: absolute;
@@ -98,5 +103,10 @@ li
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center;
+}
+
+#directory_recursive
+{
+	display: none;
 }
 

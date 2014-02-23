@@ -11,17 +11,19 @@
 		<div id="settings_i">
 			<div class="headline">Settings</div>
 		
-			<div id="histogram">
+			<div id="histogram_settings">
 				<div class="headline">Histogram</div>
-				<input id="check_bright" type="checkbox">Brightness</input>
-				<input id="check_red" type="checkbox">Red</input>
-				<input id="check_green" type="checkbox">Green</input>
-				<input id="check_blue" type="checkbox">Blue</input>
+				<input id="check_bright" type="checkbox"/>
+				<input id="check_red" type="checkbox"/>
+				<input id="check_green" type="checkbox"/>
+				<input id="check_blue" type="checkbox"/>
 			</div>
 			
 		
 			<div id="folder">
-				<input id="directory_storage" type="hidden" value="/" >
+				
+				<input id="directory_storage" type="text" disabled="disabled" value="/" >				<input id="directory_recursive" type="checkbox">
+				
 				<ol>
 					<li>
 						<div class='dir_content_div' id="dir_id_root">
@@ -33,8 +35,10 @@
 				</ol>
 			</div>
 		</div>
-		<a href="#" onclick="splitDirectoryContent('/')">splittest</a>
-		<a href="#" onclick="fullscreen(document.getElementById('divImg'))">Start Display</a>
+		
+		<button id="run_button" type="button" onclick="Run()">Run</button>
+		<button id="fullscreen" type="button" onclick="Fullscreen(document.getElementById('content'))">Fullscreen</button>
+		
 	</div>
 <div id="content">
 	<div align="center" id="divImg">

@@ -1,8 +1,12 @@
+
+
+
+
 /**
  * Make an element be displayed in fullscreen
  * @param element The id of the element
  */
-function fullscreen(element) 
+function Fullscreen(element) 
 {
   if (element.requestFullScreen) 
   {
@@ -42,6 +46,10 @@ function fileObject(directory,filename,size,attribute,date,time)
 	if(directory=='')
 	{
 		this.directory='/';
+	}
+	else
+	{
+		this.directory=directory;
 	}
 	
 	this.filename=filename;
@@ -242,3 +250,87 @@ function directoryUpdate(directory)
 }
 
 
+
+
+var timeout; 
+var run=false;
+
+var last_time=0;
+var last_date=0;
+
+function PictureUpdate(directory, directory_content, callback_info)
+{
+	load_file='';
+	for (var i = 0; i < directory_content.length; i++) 
+	{
+		var dir_obj = directory_content[i];
+		
+		//Is it just a normal file?
+//		if(  !dir_obj.isHidden
+//		   &&!dir_obj.isSystemFile
+//		   &&!dir_obj.isVolume
+//		   &&!dir_obj.isDirectory
+//		   &&!dir_obj.isArchive)
+//		
+		if(1)
+		{
+			filename_parts=dir_obj.filename.split('.');
+			
+			
+			
+			if(filename_parts.length!=0)
+			{
+				ending=filename_parts[filename_parts.length-1];
+				ending=ending.toLowerCase();
+				if(ending == 'jpg')
+				{
+					if(last_date<=dir_obj.date || last_time<dir_obj.time)
+					{
+						last_date=dir_obj.date;
+						last_time=dir_obj.time;
+						
+						load_file=dir_obj.directory + "/" + dir_obj.filename;
+					}
+				}	
+			}
+		}
+	}
+	if(load_file!='')
+	{
+		document.getElementById('divImg').style.backgroundImage = "url(" + load_file + ")"; 
+	}
+}
+
+function Runner()
+{
+	directory=document.getElementById('directory_storage').value;
+	getDirectoryContent(directory, PictureUpdate, 0);
+
+	if(run)
+	{	
+		timeout=setTimeout(Runner, 3000);
+	}	
+}
+
+
+
+
+
+
+function Run()
+{
+	RunButton=document.getElementById('run_button');
+	RunButton.setAttribute('onclick', 'Stop()');
+	RunButton.innerHTML='Stop';
+	run=true;
+	timeout=setTimeout(Runner, 3000);
+}
+
+function Stop()
+{
+	RunButton=document.getElementById('run_button');
+	RunButton.setAttribute('onclick', 'Run()');
+	RunButton.innerHTML='Run';
+	run=false;
+	clearTimeout(timeout);
+}
