@@ -1,28 +1,117 @@
 body
+{	
+	font-family: Helvetica;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height:100%;
+	width:100%;
+	margin: 0;
+}
+
+a
 {
-	background-color: grey;
-	
+	color: white;
+	font-weight: bold;
+	font-style: italic;
+	font-variant: normal;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: orange;
+}
+
+button
+{
+	min-height: 44px;
+	min-width: 44px;
 }
 
 #settings
 {
+	position: fixed;
+	top: 50px;
+	left: 10px;
+	padding: 10px;
+	text-align:center;
+	z-index:100;
 	width: 30%;
-	height: 100%;
-    background-color: rgb(85, 85, 85);	
+	max-height:90%;
+    background-color: rgb(85, 85, 85);
+    	text-align:center;
+    border-radius:20px;
+    border: 2px solid white;
+    overflow: auto;
+	color:white;
 }
 
-#settings .headline
+#settings_button
 {
 	
 }
+
+#control
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 30%;
+
+	float: left;
+	z-index:10;
+	width: 30%;
+	height: 100%;
+    opacity: 0.9;
+}
+
+
+#folder
+{
+	text-align:left;
+	display: block;
+}
+
+
+
+.headline
+{
+	left: 50%;
+	width: 50%;
+	
+	text-align:center;
+	margin-top:15px;
+	margin-bottom: 10px;
+	padding: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	
+	font-weight:bold;
+	font-size:small;
+	border: 1px solid white;
+	border-left: 15px solid white;
+	border-right: 15px solid white;
+	
+	border-radius: 60px;
+
+}
+
 
 
 
 #content
 {
-	color:red;
-	background-color: white;
-	
+	background-color: black;
+}
+
+
+#directory_storage
+{
+	background-color: rgb(85, 85, 85);
+	width:90%;
+	border:none;
+	text-align:center;
 }
 
 li 
@@ -40,13 +129,76 @@ li
 	height: 15px;
 }
 
-#folder
-{
-	overflow: auto;
-}
+
 
 .dir_content_div
 {
-	float: left;
+	align: center;
+	valign: middle;
+	
 	white-space: nowrap;
+}
+
+#histogram_settings
+{
+	display: none;
+}
+
+#content
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	max-height:100%;
+	max-width:100%;
+	height:100%;
+	width:100%;
+	margin:0;
+}
+
+#divImg
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	max-height:100%;
+	max-width:100%;
+	height:100%;
+	width:100%;
+	margin:0;
+	background-image: url("test.jpg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+#fullscreen_button
+{
+
+}
+
+#run_button
+{
+
+}
+
+.dir_button
+{
+
+}
+
+.dir_radio
+{
+	min-height: 44px;
+	min-width: 44px;
+}
+
+.dir_path 
+{
+	font-size: 20px;
+}
+
+div
+{
+	margin-top: 10px;
 }
