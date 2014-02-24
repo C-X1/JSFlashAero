@@ -6,7 +6,7 @@ A JavaScript Application for automatic display of new photos on Toshiba FlashAir
 Install:
 
 1. Copy folder JSFAERO to the SD_WLAN directory on your FlashAir Card
-2. Edit your List.htm and add a Link to JSFAERO/INDEX.HTM
+2. Edit your List.htm and add a Link to JSFAERO/INDEX.HTM (optional)
     
     Example:
     ```html
@@ -19,6 +19,8 @@ Install:
     </body></html>
     
     ```
+3. Access it with the Link on your page or if you did not change it use:
+   http://192.168.0.1/SD_WLAN/JSFAERO/INDEX.htm
 
 Usage:
 
