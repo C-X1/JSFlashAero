@@ -16,6 +16,12 @@ document.addEventListener("DOMContentLoaded", cookieLoad, false);
  */
 
 /**
+ * This variable contains the last loaded image with its full path
+ */
+var last_image;
+
+
+/**
  * keeps the current running timeout for the runner
  */
 var timeout; 
@@ -441,7 +447,15 @@ function PictureUpdate(directory, directory_content, callback_info)
 	}
 	if(load_file!='')
 	{
-		document.getElementById('divImg').style.backgroundImage = "url(" + load_file + ")"; 
+		var nimg="url(" + load_file + ")";
+		
+		
+		
+		if(load_file!=last_image)
+		{
+			document.getElementById('divImg').style.backgroundImage = nimg; 
+			last_image=load_file;
+		}
 	}
 }
 
